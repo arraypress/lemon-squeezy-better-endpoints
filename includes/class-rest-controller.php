@@ -17,8 +17,8 @@ namespace ArrayPress\LemonSqueezy\Better_Endpoints;
 defined( 'ABSPATH' ) || exit;
 
 use WP_REST_Request;
-use WP_REST_Server;
 use WP_REST_Response;
+use WP_REST_Server;
 use function add_action;
 use function get_option;
 use function is_wp_error;
@@ -90,7 +90,7 @@ class Rest_Controller {
 					'instance_id' => [
 						'description'       => 'Instance ID of the existing activation.',
 						'type'              => 'string',
-						'required'          => true,
+						'required'          => false,
 						'sanitize_callback' => 'sanitize_text_field',
 					],
 				),
@@ -129,8 +129,16 @@ class Rest_Controller {
 			);
 		}
 
+		// Prepare the query arguments, making 'instance_id' conditional
+		$query_args = [ 'license_key' => $license_key ];
+		if ( ! empty( $instance_id ) ) {
+			$query_args['instance_id'] = trim( $instance_id );
+		}
+
+		$validation_url = add_query_arg( $query_args, LSQ_API_URL . '/v1/licenses/validate' );
+
 		$response = wp_remote_post(
-			LSQ_API_URL . "/v1/licenses/validate?license_key=${license_key}&instance_id={$instance_id}",
+			$validation_url,
 			array(
 				'headers' => array(
 					'Authorization' => 'Bearer ' . $api_key,
