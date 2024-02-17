@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 
 use WP_REST_Request;
 use WP_REST_Server;
+use WP_REST_Response;
 use function add_action;
 use function get_option;
 use function is_wp_error;
