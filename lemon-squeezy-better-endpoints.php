@@ -26,12 +26,13 @@ use function add_action;
 /**
  * Initializes the custom REST endpoints and loads the necessary components for the Lemon Squeezy plugin.
  *
- * This function checks for the existence of the Lemon Squeezy specific class to ensure that the Lemon Squeezy plugin is active.
- * If the plugin is active, it proceeds to set up the plugin's main path, load translations for better localization support,
- * include the custom endpoint class file, and finally, instantiate the custom endpoint class to register the custom REST endpoints.
+ * This function checks for the existence of the Lemon Squeezy specific class to ensure that the Lemon Squeezy plugin
+ * is active. If the plugin is active, it proceeds to set up the plugin's main path, load translations for better
+ * localization support, include the custom endpoint class file, and finally, instantiate the custom endpoint class to
+ * register the custom REST endpoints.
  *
- * It is hooked into the 'plugins_loaded' action to make sure it runs after all plugins are loaded, ensuring that the class existence
- * check is accurate and that translations are loaded at the right time.
+ * It is hooked into the 'plugins_loaded' action to make sure it runs after all plugins are loaded, ensuring that the
+ * class existence check is accurate and that translations are loaded at the right time.
  *
  * @return void This function does not return any value.
  */
