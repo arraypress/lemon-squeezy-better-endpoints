@@ -1,6 +1,6 @@
 # Lemon Squeezy - Better Endpoints
 
-Enhances the [Lemon Squeezy plugin](https://wordpress.org/plugins/lemon-squeezy/) by adding a `validate_license_key`
+Enhances the [Lemon Squeezy WordPress plugin](https://wordpress.org/plugins/lemon-squeezy/) by adding a `validate_license_key`
 endpoint, facilitating license key validation
 directly through custom REST API endpoints. This extension aims to provide a seamless integration for license management
 within the WordPress ecosystem, leveraging the Lemon Squeezy API for secure and efficient validation processes.
@@ -18,7 +18,6 @@ To include this extension in your project, follow the steps below:
 
 1. Ensure that the Lemon Squeezy plugin is installed and activated on your WordPress site.
 2. Download or clone this extension into your project directory.
-3. Include the main class file in your project's initialization script:
 
 ## Usage
 
